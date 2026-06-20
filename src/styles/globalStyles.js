@@ -164,7 +164,19 @@ export const globalStyles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  
+  fabButton: {
+    position: 'absolute',
+    bottom: spacing[5],
+    right: spacing[5],
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    backgroundColor: colors.secondary,
+    alignItems: 'center',
+    justifyContent: 'center',
+    ...shadows.md,
+    zIndex: 10,
+},
   // Padding y márgenes
   p4: { padding: spacing[4] },
   p6: { padding: spacing[6] },
@@ -175,3 +187,4 @@ export const globalStyles = StyleSheet.create({
   gap2: { gap: spacing[2] },
   gap4: { gap: spacing[4] },
 });
+

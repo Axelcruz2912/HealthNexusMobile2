@@ -15,18 +15,18 @@ import {
 import AdminMainDashboard from './admin/AdminMainDashboard';
 import PersonalScreen from './admin/PersonalScreen';
 
-// 🔴 COMENTADAS TEMPORALMENTE (para evitar errores)
-// import ScoreRiesgoScreen from './admin/ScoreRiesgoScreen';
-// import RolesScreen from './admin/RolesScreen';
-// import PacientesScreen from './admin/PacientesScreen';
-// import UrgenciasScreen from './admin/UrgenciasScreen';
-// import FarmaciaScreen from './admin/FarmaciaScreen';
-// import CamasScreen from './admin/CamasScreen';
-// import AmbulanciasScreen from './admin/AmbulanciasScreen';
-// import HospitalLiveScreen from './admin/HospitalLiveScreen';
+//  COMENTADAS TEMPORALMENTE (para evitar errores)
+ import ScoreRiesgoScreen from './admin/ScoreRiesgoScreen';
+ import RolesScreen from './admin/RolesScreen';
+ import PacientesScreen from './admin/PacientesScreen';
+ import UrgenciasScreen from './admin/UrgenciasScreen';
+ import FarmaciaScreen from './admin/FarmaciaScreen';
+ import CamasScreen from './admin/CamasScreen';
+ import AmbulanciasScreen from './admin/AmbulanciasScreen';
+ import HospitalLiveScreen from './admin/HospitalLiveScreen';
 // import AsistenteIAScreen from './admin/AsistenteIAScreen';
-// import FinanzasScreen from './admin/FinanzasScreen';
-// import AuditoriaScreen from './admin/AuditoriaScreen';
+ import FinanzasScreen from './admin/FinanzasScreen';
+import AuditoriaScreen from './admin/AuditoriaScreen';
 // import BigDataScreen from './admin/BigDataScreen';
 // import ActividadSospechosaScreen from './admin/ActividadSospechosaScreen';
 // import MonitorLiveScreen from './admin/MonitorLiveScreen';
@@ -47,27 +47,25 @@ function CustomDrawerContent({ navigation, state }) {
       items: [
         { name: 'Dashboard', screen: 'MainDashboard', icon: 'tachometer-alt', iconType: 'FontAwesome5' },
         { name: 'Personal', screen: 'Personal', icon: 'user-md', iconType: 'FontAwesome5' },
-        // 🔴 Comentado: Score Riesgo
-        // { name: 'Score Riesgo', screen: 'ScoreRiesgo', icon: 'user-tag', iconType: 'FontAwesome5' },
-        // 🔴 Comentado: Roles
-        // { name: 'Roles', screen: 'Roles', icon: 'key', iconType: 'FontAwesome5' },
+         { name: 'Score Riesgo', screen: 'ScoreRiesgo', icon: 'user-tag', iconType: 'FontAwesome5' },
+         { name: 'Roles', screen: 'Roles', icon: 'key', iconType: 'FontAwesome5' },
       ]
     },
     {
       title: 'OPERACIÓN HOSPITALARIA',
       items: [
-        // { name: 'Pacientes', screen: 'Pacientes', icon: 'procedures', iconType: 'FontAwesome5' },
-        // { name: 'Urgencias', screen: 'Urgencias', icon: 'ambulance', iconType: 'FontAwesome5' },
-        // { name: 'Farmacia', screen: 'Farmacia', icon: 'pills', iconType: 'FontAwesome5' },
-        // { name: 'Camas', screen: 'Camas', icon: 'bed', iconType: 'FontAwesome5' },
+         { name: 'Pacientes', screen: 'Pacientes', icon: 'procedures', iconType: 'FontAwesome5' },
+         { name: 'Urgencias', screen: 'Urgencias', icon: 'ambulance', iconType: 'FontAwesome5' },
+         { name: 'Farmacia', screen: 'Farmacia', icon: 'pills', iconType: 'FontAwesome5' },
+         { name: 'Camas', screen: 'Camas', icon: 'bed', iconType: 'FontAwesome5' },
       ]
     },
     {
       title: 'AMBULANCIA Y TRASLADOS',
       items: [
-        // { name: 'Ambulancias', screen: 'Ambulancias', icon: 'truck-medical', iconType: 'FontAwesome5' },
-        // { name: 'Hospital Live', screen: 'HospitalLive', icon: 'tower-broadcast', iconType: 'MaterialCommunityIcons' },
-      ]
+        { name: 'Ambulancias', screen: 'Ambulancias', icon: 'truck', iconType: 'FontAwesome5' },
+        {  name: 'Hospital Live', screen: 'HospitalLive', icon: 'access-point', iconType: 'MaterialCommunityIcons'}     
+       ]
     },
     {
       title: 'IA MÉDICA',
@@ -78,8 +76,8 @@ function CustomDrawerContent({ navigation, state }) {
     {
       title: 'FINANZAS Y SEGURIDAD',
       items: [
-        // { name: 'Finanzas (PIN)', screen: 'Finanzas', icon: 'lock', iconType: 'Feather' },
-        // { name: 'Auditoría', screen: 'Auditoria', icon: 'scroll', iconType: 'FontAwesome5' },
+      { name: 'Finanzas (PIN)', screen: 'Finanzas', icon: 'lock', iconType: 'Feather' },
+      { name: 'Auditoría', screen: 'Auditoria', icon: 'scroll', iconType: 'FontAwesome5' },
         // { name: 'Big Data & DWH', screen: 'BigData', icon: 'database', iconType: 'FontAwesome5' },
         // { name: 'Sospechosos', screen: 'ActividadSospechosa', icon: 'skull-crossbones', iconType: 'FontAwesome5' },
         // { name: 'Monitor Live', screen: 'MonitorLive', icon: 'broadcast-tower', iconType: 'FontAwesome5' },
@@ -199,18 +197,18 @@ export default function AdminDashboard() {
         options={{ title: 'Personal' }}
       />
 
-      {/* 🔴 TODAS LAS DEMÁS PANTALLAS ESTÁN COMENTADAS */}
-      {/* <Drawer.Screen name="ScoreRiesgo" component={ScoreRiesgoScreen} options={{ title: 'Score Riesgo' }} /> */}
-      {/* <Drawer.Screen name="Roles" component={RolesScreen} options={{ title: 'Roles' }} /> */}
-      {/* <Drawer.Screen name="Pacientes" component={PacientesScreen} options={{ title: 'Pacientes' }} /> */}
-      {/* <Drawer.Screen name="Urgencias" component={UrgenciasScreen} options={{ title: 'Urgencias' }} /> */}
-      {/* <Drawer.Screen name="Farmacia" component={FarmaciaScreen} options={{ title: 'Farmacia' }} /> */}
-      {/* <Drawer.Screen name="Camas" component={CamasScreen} options={{ title: 'Camas' }} /> */}
-      {/* <Drawer.Screen name="Ambulancias" component={AmbulanciasScreen} options={{ title: 'Ambulancias' }} /> */}
-      {/* <Drawer.Screen name="HospitalLive" component={HospitalLiveScreen} options={{ title: 'Hospital Live' }} /> */}
+      {/*  TODAS LAS DEMÁS PANTALLAS ESTÁN COMENTADAS */}
+       <Drawer.Screen name="ScoreRiesgo" component={ScoreRiesgoScreen} options={{ title: 'Score Riesgo' }} /> 
+       <Drawer.Screen name="Roles" component={RolesScreen} options={{ title: 'Roles' }} /> 
+      { <Drawer.Screen name="Pacientes" component={PacientesScreen} options={{ title: 'Pacientes' }} /> }
+      { <Drawer.Screen name="Urgencias" component={UrgenciasScreen} options={{ title: 'Urgencias' }} /> }
+      {<Drawer.Screen name="Farmacia" component={FarmaciaScreen} options={{ title: 'Farmacia' }} /> }
+      { <Drawer.Screen name="Camas" component={CamasScreen} options={{ title: 'Camas' }} /> }
+      { <Drawer.Screen name="Ambulancias" component={AmbulanciasScreen} options={{ title: 'Ambulancias' }} /> }
+      { <Drawer.Screen name="HospitalLive" component={HospitalLiveScreen} options={{ title: 'Hospital Live' }} /> }
       {/* <Drawer.Screen name="AsistenteIA" component={AsistenteIAScreen} options={{ title: 'Asistente IA' }} /> */}
-      {/* <Drawer.Screen name="Finanzas" component={FinanzasScreen} options={{ title: 'Finanzas' }} /> */}
-      {/* <Drawer.Screen name="Auditoria" component={AuditoriaScreen} options={{ title: 'Auditoría' }} /> */}
+      { <Drawer.Screen name="Finanzas" component={FinanzasScreen} options={{ title: 'Finanzas' }} /> }
+      { <Drawer.Screen name="Auditoria" component={AuditoriaScreen} options={{ title: 'Auditoría' }} /> }
       {/* <Drawer.Screen name="BigData" component={BigDataScreen} options={{ title: 'Big Data & DWH' }} /> */}
       {/* <Drawer.Screen name="ActividadSospechosa" component={ActividadSospechosaScreen} options={{ title: 'Actividad Sospechosa' }} /> */}
       {/* <Drawer.Screen name="MonitorLive" component={MonitorLiveScreen} options={{ title: 'Monitor Live' }} /> */}
