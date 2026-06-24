@@ -27,12 +27,12 @@ import PersonalScreen from './admin/PersonalScreen';
 // import AsistenteIAScreen from './admin/AsistenteIAScreen';
  import FinanzasScreen from './admin/FinanzasScreen';
 import AuditoriaScreen from './admin/AuditoriaScreen';
-// import BigDataScreen from './admin/BigDataScreen';
-// import ActividadSospechosaScreen from './admin/ActividadSospechosaScreen';
-// import MonitorLiveScreen from './admin/MonitorLiveScreen';
-// import MapaCalorScreen from './admin/MapaCalorScreen';
-// import IngestaScreen from './admin/IngestaScreen';
-// import LimpiezaScreen from './admin/LimpiezaScreen';
+ import BigDataScreen from './admin/BigDataScreen';
+ import ActividadSospechosaScreen from './admin/ActividadSospechosaScreen';
+ import MonitorLiveScreen from './admin/MonitorLiveScreen';
+ import MapaCalorScreen from './admin/MapaCalorScreen';
+import IngestaScreen from './admin/IngestaScreen';
+ import LimpiezaScreen from './admin/LimpiezaScreen';
 // import ReportesScreen from './admin/ReportesScreen';
 
 const Drawer = createDrawerNavigator();
@@ -78,17 +78,17 @@ function CustomDrawerContent({ navigation, state }) {
       items: [
       { name: 'Finanzas (PIN)', screen: 'Finanzas', icon: 'lock', iconType: 'Feather' },
       { name: 'Auditoría', screen: 'Auditoria', icon: 'scroll', iconType: 'FontAwesome5' },
-        // { name: 'Big Data & DWH', screen: 'BigData', icon: 'database', iconType: 'FontAwesome5' },
-        // { name: 'Sospechosos', screen: 'ActividadSospechosa', icon: 'skull-crossbones', iconType: 'FontAwesome5' },
-        // { name: 'Monitor Live', screen: 'MonitorLive', icon: 'broadcast-tower', iconType: 'FontAwesome5' },
+         { name: 'Big Data & DWH', screen: 'BigData', icon: 'database', iconType: 'FontAwesome5' },
+         { name: 'Sospechosos', screen: 'ActividadSospechosa', icon: 'skull-crossbones', iconType: 'FontAwesome5' },
+         { name: 'Monitor Live', screen: 'MonitorLive', icon: 'broadcast-tower', iconType: 'FontAwesome5' },
       ]
     },
     {
       title: 'DATOS E IA',
       items: [
-        // { name: 'Mapa Calor', screen: 'MapaCalor', icon: 'fire-alt', iconType: 'FontAwesome5' },
-        // { name: 'Ingesta', screen: 'Ingesta', icon: 'upload', iconType: 'Feather' },
-        // { name: 'Limpieza', screen: 'Limpieza', icon: 'broom', iconType: 'FontAwesome5' },
+         { name: 'Mapa Calor', screen: 'MapaCalor', icon: 'fire-alt', iconType: 'FontAwesome5' },
+         { name: 'Ingesta', screen: 'Ingesta', icon: 'upload', iconType: 'Feather' },
+         { name: 'Limpieza', screen: 'Limpieza', icon: 'broom', iconType: 'FontAwesome5' },
         // { name: 'Reportes', screen: 'Reportes', icon: 'file-pdf', iconType: 'FontAwesome5' },
       ]
     },
@@ -209,12 +209,12 @@ export default function AdminDashboard() {
       {/* <Drawer.Screen name="AsistenteIA" component={AsistenteIAScreen} options={{ title: 'Asistente IA' }} /> */}
       { <Drawer.Screen name="Finanzas" component={FinanzasScreen} options={{ title: 'Finanzas' }} /> }
       { <Drawer.Screen name="Auditoria" component={AuditoriaScreen} options={{ title: 'Auditoría' }} /> }
-      {/* <Drawer.Screen name="BigData" component={BigDataScreen} options={{ title: 'Big Data & DWH' }} /> */}
-      {/* <Drawer.Screen name="ActividadSospechosa" component={ActividadSospechosaScreen} options={{ title: 'Actividad Sospechosa' }} /> */}
-      {/* <Drawer.Screen name="MonitorLive" component={MonitorLiveScreen} options={{ title: 'Monitor Live' }} /> */}
-      {/* <Drawer.Screen name="MapaCalor" component={MapaCalorScreen} options={{ title: 'Mapa de Calor' }} /> */}
-      {/* <Drawer.Screen name="Ingesta" component={IngestaScreen} options={{ title: 'Ingesta de Datos' }} /> */}
-      {/* <Drawer.Screen name="Limpieza" component={LimpiezaScreen} options={{ title: 'Limpieza de Datos' }} /> */}
+      { <Drawer.Screen name="BigData" component={BigDataScreen} options={{ title: 'Big Data & DWH' }} /> }
+      { <Drawer.Screen name="ActividadSospechosa" component={ActividadSospechosaScreen} options={{ title: 'Actividad Sospechosa' }} /> }
+      { <Drawer.Screen name="MonitorLive" component={MonitorLiveScreen} options={{ title: 'Monitor Live' }} /> }
+      { <Drawer.Screen name="MapaCalor" component={MapaCalorScreen} options={{ title: 'Mapa de Calor' }} /> }
+      { <Drawer.Screen name="Ingesta" component={IngestaScreen} options={{ title: 'Ingesta de Datos' }} /> }
+      { <Drawer.Screen name="Limpieza" component={LimpiezaScreen} options={{ title: 'Limpieza de Datos' }} /> }
       {/* <Drawer.Screen name="Reportes" component={ReportesScreen} options={{ title: 'Reportes' }} /> */}
     </Drawer.Navigator>
   );

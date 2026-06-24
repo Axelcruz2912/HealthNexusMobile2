@@ -332,11 +332,11 @@ export const verifyFinancePin = async (pin) => {
     }
 };
 
-export const getFinanzasDashboard = async (financeToken) => {
+export const getFinanzasDashboard = async (pin) => {
     try {
         const response = await api.get('/admin/finanzas/dashboard', {
             headers: {
-                'X-Finance-Token': financeToken || ''
+                'X-Finance-Pin': pin || ''
             }
         });
         return response.data;
@@ -352,6 +352,104 @@ export const getAuditoriaDashboard = async () => {
         return response.data;
     } catch (error) {
         console.error('Error getAuditoriaDashboard:', error);
+        throw error;
+    }
+};
+
+export const getBigDataDashboard = async () => {
+    try {
+        const response = await api.get('/admin/bigdata/dashboard');
+        return response.data;
+    } catch (error) {
+        console.error('Error getBigDataDashboard:', error);
+        throw error;
+    }
+};
+
+export const runETL = async () => {
+    try {
+        const response = await api.post('/admin/bigdata/run-etl');
+        return response.data;
+    } catch (error) {
+        console.error('Error runETL:', error);
+        throw error;
+    }
+};
+
+export const getSuspiciousActivity = async (page = 1) => {
+    try {
+        const response = await api.get(`/admin/suspicious-activity?page=${page}`);
+        return response.data;
+    } catch (error) {
+        console.error('Error getSuspiciousActivity:', error);
+        throw error;
+    }
+};
+export const getMonitorLive = async () => {
+    try {
+        const response = await api.get('/admin/monitor-live');
+        return response.data;
+    } catch (error) {
+        console.error('Error getMonitorLive:', error);
+        throw error;
+    }
+};
+export const getHeatmap = async () => {
+    try {
+        const response = await api.get('/admin/heatmap');
+        return response.data;
+    } catch (error) {
+        console.error('Error getHeatmap:', error);
+        throw error;
+    }
+};
+export const uploadCSV = async (file) => {
+    try {
+        const formData = new FormData();
+        formData.append('csv_file', {
+            uri: file.uri,
+            type: file.type || 'text/csv',
+            name: file.name || 'archivo.csv'
+        });
+        
+        const response = await api.post('/admin/ingesta/upload', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            }
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error uploadCSV:', error);
+        throw error;
+    }
+};
+
+export const getCSVPreview = async () => {
+    try {
+        const response = await api.get('/admin/ingesta/preview');
+        return response.data;
+    } catch (error) {
+        console.error('Error getCSVPreview:', error);
+        throw error;
+    }
+};
+
+export const cleanData = async (action) => {
+    try {
+        const response = await api.post('/admin/clean-data', { action });
+        return response.data;
+    } catch (error) {
+        console.error('Error cleanData:', error);
+        throw error;
+    }
+};
+
+export const getCleanResult = async () => {
+    try {
+        const response = await api.get('/admin/clean-result');
+        return response.data;
+    } catch (error) {
+        console.error('Error getCleanResult:', error);
         throw error;
     }
 };
